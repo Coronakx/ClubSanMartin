@@ -9,6 +9,7 @@
   --bs-green: #198754;
   --bs-teal: #20c997;
   --bs-cyan: #0dcaf0;
+  --bs-blue-dark:#070a52;
   --bs-white: #fff;
   --bs-gray: #6c757d;
   --bs-gray-dark: #343a40;
@@ -41,7 +42,7 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 255, 255, 255;
-  --bs-font-sans-serif: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "Alkatra";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: Merriweather, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
@@ -75,6 +76,7 @@
 }
 
 body {
+  padding-top:6vh;
   margin: 0;
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
@@ -11418,7 +11420,7 @@ hr.divider-light {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
-  background: linear-gradient(to bottom, rgba(106, 90, 205, 0.6) 0%, rgba(0, 140, 255, 0.8) 100%), url("../assets/img/bg-masthead.jpg");
+  background:linear-gradient(to bottom, rgba(106, 90, 205, 0.6) 0%, rgba(0, 140, 255, 0.8) 100%), url("../assets/img/bg-masthead.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -11561,16 +11563,17 @@ header.masthead h1, header.masthead .h1 {
   --color-amarillo: rgb(252, 184, 34);
 }
 
-
+/*inicio navegador*/
   nav {
-  background: linear-gradient(90deg,
-      var(--color-blanco),
-      var(--color-gris-fondo));
+  background: var(--bs-blue-dark);
+  width:100%;
   height: 6vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  position:fixed;
+  top:0;
 }
 
 .logo img {
@@ -11584,7 +11587,6 @@ header.masthead h1, header.masthead .h1 {
   width: 90%;
   height: 6vh;
   border-radius: 0 0 0 10px;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -11601,14 +11603,14 @@ header.masthead h1, header.masthead .h1 {
 .menu-horizontal>li>a {
   display: block;
   padding: 6px 15.5px;
-  color: var(--color-azul);
+  color: var(--bs-gray-300);
   text-decoration: none;
   font-size: 1.2em;
   border-radius: 10px;
 }
 
 .menu-horizontal>li:hover {
-  background-color: var(--bs-yellow); 
+  background-color: var(--bs-gray-500); 
   border-radius: 1em;
 }
 
@@ -11621,30 +11623,33 @@ header.masthead h1, header.masthead .h1 {
   position: absolute;
   display: none;
   list-style: none;
-  width: 7.7em;
-  background-color: var(--color-gris-fondo);
+  width: 8.3em;
+  background-color: var(--bs-blue-dark);
   border-radius: 1em;
   text-align:center;
 }
 
 .menu-horizontal li:hover .menu-vertical {
   display: block;
+  padding:0;
 }
 
 .menu-vertical li:hover {
-  background-color: var(--bs-yellow);
-  border-radius: 1em;
+  background-color: var(--bs-gray-500);
+  border-radius: 10px;
 }
 
 .menu-vertical li a {
   display: block;
-  color: var(--color-azul);
+  color: var(--bs-gray-300);
   padding: 0.5em 1em 0.5em .5em;
   text-decoration: none;
-}
+}/*final navegador*/
+
+/*inicio footer*/
 footer{
-  background-color: var(--color-gris-obscuro);
-  color: var(--color-gris-fondo);
+  background-color: var(--bs-blue-dark);
+  color: var(--bs-gray-300);
   height: 30vh;
   font-size: 0.7em;
   display:flex;
@@ -11702,7 +11707,7 @@ span[class~="icon"]{
   display: inline-block;
 	width:1.5em;
 	font-size:1em;
-	color:rgb(133, 193, 233);
+	color: var(--bs-cyan); /*rgb(133, 193, 233);*/
   padding:0 .2em; 
 }
 span[class~="block-text"]{
@@ -11725,14 +11730,14 @@ span[class~="block-text"]{
 }
 .link{
   text-decoration:none;
-  color:var(--color-gris-fondo);
+  color:var(--bs-gray-300);
 }
 .link:hover {
   color: var(--bs-yellow);
 }
 .footer-block>ul>li>span>a{
   text-decoration:none;
-  color:var(--color-gris-fondo);
+  color:var(--bs-gray-300);
 }
 .container-down{
   width: 100%;
@@ -11742,4 +11747,4 @@ span[class~="block-text"]{
   justify-content: center;
   align-items: center;
   margin-top:3em;
-}
+} /*final footer*/
